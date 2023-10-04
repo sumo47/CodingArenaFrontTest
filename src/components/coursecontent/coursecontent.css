@@ -1,0 +1,103 @@
+
+  
+  .coursecontentheading{
+    font-size: 30px;
+    font-weight: 600;
+    color: white;
+    /* margin-left: 60px; */
+    margin: 15px 2px ;
+  }
+  .courseoverview{
+    font-size: 20px;
+    font-weight: 600;
+    color: white;
+    margin-top: 10px;
+    margin-left: 5px;
+    
+  }
+  .mainContainer {
+    
+    padding: 8px;
+    background-image: linear-gradient(to right,#f5ac82,#a11afe);
+    height: 440px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    display: flex;
+  }
+  
+  .contentBody {
+    margin-top: 25px;
+    margin-left: 60px;
+   
+  }
+  
+  .courseDesc{
+   
+    margin-left: 100px;
+    border: 3px solid white;
+    border-radius: 10px;
+    width: 330px;
+    
+  }
+  .desc{
+    margin-top: 26px;
+    margin-left: 20px;
+  }
+  .desc>div{
+    padding: 6px;
+    color: white;
+
+  }
+  .desc :nth-child(3){
+    color:#f5ac82;
+    text-decoration: underline;
+    cursor: pointer;
+    font-weight: 600;
+  }
+  .courseimage{
+    width: 170px;
+    height: 170px;
+    margin: 10px auto;
+  }
+  .cartbutton{
+    margin-left: 50px;
+  }
+  .b1{
+    border: none;
+    border-radius: 10px;
+    background-color: #f5ac82;
+    
+    
+    padding: 10px 20px;
+  }
+  .b2{
+    border: none;
+    border-radius: 10px;
+    background-color: #f5ac82;
+    padding: 10px 12px;
+  
+    margin-left: 10px;
+  }
+  .b1:hover{
+    background-color: #a11afe;
+  }
+  
+  .b2:hover{
+    background-color: #a11afe;
+  }
+
+  .coursepoints>li{
+    margin: 10px 5px ;
+    
+  }
+  .coursepoints>li>i{
+    margin-right: 10px;
+    color: #212529;
+    margin-left: 10px;
+    
+  }
+  
+  .nav-item>a{
+    color: #212529;
+  }
+  

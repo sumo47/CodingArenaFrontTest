@@ -1,0 +1,50 @@
+
+#sidebar{
+    margin-top: 15px;
+    margin-left: 10px;
+}
+#sidebar2{
+    margin-top: 15px;
+    margin-left: 10px;
+
+}
+.profilecontainer{
+    display: flex;
+}
+.profilesidebar>li>a{
+    cursor: pointer;
+   
+}
+.nav-item{
+    padding: 20px;
+    
+}.nav-item .sidebaropt{
+    font-size: 18px;
+    font-weight: 600;
+    color: #a11afe;
+
+}
+.nav-item .sidebaropt:hover{
+    color: #f5ac82;
+
+}
+.stats{
+    padding: 10px;
+    border: 2px solid #f5ac82;
+    border-radius: 10px;
+    color: #a11afe;
+    font-size: 18px;
+    font-weight: 600;
+    align-items: center;
+    justify-content: center;
+    margin: 5px;
+}
+.stats>h2{
+    margin-left: 10px;
+}
+.statbox>div>p{
+    font-size: 18px;
+    font-weight: 600;
+    align-items: center;
+    margin-left: 40px;
+}
