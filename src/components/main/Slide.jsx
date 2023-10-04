@@ -2,7 +2,7 @@ import "./main.css";
 import { Link } from "react-router-dom";
 import { BiSolidUser } from "react-icons/bi";
 import { AiFillStar } from "react-icons/ai";
-import { ToastContainer, toast } from "react-toastify";
+// import { ToastContainer, toast } from "react-toastify"; 
 
 import "react-toastify/dist/ReactToastify.css";
 

@@ -3,18 +3,18 @@ import { useNavigate} from "react-router-dom";
 import axios from "axios";
 
 import "react-toastify/dist/ReactToastify.css";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import CourseListCard from "./CourseListCard";
 import CourseContent from "../coursecontent/CourseContent"
 
 const CourseList = () => {
   
- const navigate = useNavigate();
+ const navigate = useNavigate(); 
   const [courses, setCourses] = useState([]);
 
   useEffect(() => {
     // Fetch available courses from the server
-    axios.get('http://localhost:3001/courses')
+    axios.get('https://coding-arena-backend.glitch.me/courses')
       .then((response) => {
         setCourses(response.data);
       })

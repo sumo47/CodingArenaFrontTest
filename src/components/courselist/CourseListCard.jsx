@@ -1,4 +1,4 @@
-import { useState,useEffect } from "react";
+import { useState} from "react";
 
 import { BiSolidUser } from "react-icons/bi";
 import { AiFillStar } from "react-icons/ai";
@@ -6,8 +6,6 @@ import { ToastContainer, toast } from "react-toastify";
 
 
 import "react-toastify/dist/ReactToastify.css";
-
-
 
 export default function CourseListCard({image,title,price,onClick}) {
   const [message, setmessage] = useState(false);

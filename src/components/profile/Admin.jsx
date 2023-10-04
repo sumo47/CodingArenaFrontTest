@@ -32,7 +32,7 @@ function Admin() {
     formData.append("image", courseData.image);
 
     try {
-      const response = await fetch('http://localhost:3001/upload',{
+       await fetch('https://coding-arena-backend.glitch.me/upload',{
       method: 'POST',
       body: formData    
       

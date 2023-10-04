@@ -1,7 +1,7 @@
 import "./coursecontent.css";
 
 
-import { ToastContainer, toast } from "react-toastify";
+import { ToastContainer} from "react-toastify"; 
 import { useEffect, useState } from "react";
 import axios from "axios";
 
@@ -21,7 +21,7 @@ export default function CourseContent() {
   useEffect(() => {
     // Fetch available courses from the server
     axios
-      .get("http://localhost:3001/courses")
+      .get("https://coding-arena-backend.glitch.me/courses")
       .then((response) => {
         setCourse(response.data);
         
@@ -46,7 +46,7 @@ export default function CourseContent() {
       }
   
       // Send an API request to add the selected course to the cart
-      const response = await axios.post('http://localhost:3001/cart/add', { courseId });
+      const response = await axios.post('https://coding-arena-backend.glitch.me/cart/add', { courseId });
       console.log(response.data.message);
       
       // Update the cart state locally

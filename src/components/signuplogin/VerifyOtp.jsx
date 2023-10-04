@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-const API_URL = "http://localhost:3001/verifyotp";
+const API_URL = "https://coding-arena-backend.glitch.me/verifyotp";
 
 function VerifyOtp() {
   const [otp, setOtp] = useState("");

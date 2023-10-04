@@ -1,11 +1,11 @@
 import React from "react";
 
-import ProgressBar from "@ramonak/react-progress-bar";
-import { Link } from "react-router-dom";
+// import ProgressBar from "@ramonak/react-progress-bar";
+// import { Link } from "react-router-dom";
 import "./profile.css";
-import axios from "axios";
+// import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import { useState, useEffect } from "react";
+// import { useState, useEffect } from "react";
 
 function Profile() {
 	const navigate = useNavigate();

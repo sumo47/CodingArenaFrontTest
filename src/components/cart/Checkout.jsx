@@ -1,8 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import OrderItem from './OrderItem'
-import Modal from 'react-modal'; 
-import Login from '../signuplogin/Login'
 
 
 const Checkout = () => {
@@ -13,13 +11,12 @@ const Checkout = () => {
   const [email, setEmail] = useState(""); // Add state for email
 
   const [orderPlaced, setOrderPlaced] = useState(false);
-  const [showLoginPopup, setShowLoginPopup] = useState(false); 
   
 
   useEffect(() => {
     // Fetch the list of courses in the cart from your API
     axios
-      .get("http://localhost:3001/cart")
+      .get("https://coding-arena-backend.glitch.me/cart")
       .then((response) => {
         setCart(response.data);
 
@@ -55,7 +52,7 @@ const Checkout = () => {
 	 
     // Send a POST request to the backend to place the order
     axios
-      .post("http://localhost:3001/checkout", orderData,{ headers })
+      .post("https://coding-arena-backend.glitch.me/checkout", orderData,{ headers })
       .then((response) => {
         console.log("Order placed successfully");
 		  // Clear the cart and reset the form

@@ -3,7 +3,7 @@ import axios from "axios";
 import {ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { Link } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 
 export default function Login() {
   const [formData, setFormData] = useState({
@@ -11,7 +11,7 @@ export default function Login() {
     password: "",
   });
   //to navigate to profle after login
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
     //popup
     const showMessage = (text, isError = false) => {
@@ -26,7 +26,7 @@ export default function Login() {
 
   const handleLogin = async () => {
     try {
-      const response = await axios.post("http://localhost:3001/login", formData);
+      const response = await axios.post("https://coding-arena-backend.glitch.me/login", formData);
       const { success, token, error } = response.data;
 
       if (success) {
