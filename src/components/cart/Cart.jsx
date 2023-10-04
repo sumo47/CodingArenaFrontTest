@@ -1,17 +1,17 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import CartItem from "./CartItem";
-import { Link, useNavigate } from "react-router-dom";
+import {  useNavigate } from "react-router-dom";
 
 
 function Cart() {
 	const [cart, setCart] = useState([]);
-	const [total, setTotal] = useState(0);
-	const [formData, setformData] = useState({
-		email: "",
-		password: "",
-	  });
-	  const [loggedIn, setLoggedIn] = useState(false);
+	const [total, setTotal] = useState(0); 
+	// const [formData, setformData] = useState({
+	// 	email: "",
+	// 	password: "",
+	//   });
+	//   const [loggedIn, setLoggedIn] = useState(false);
 	
 	
 

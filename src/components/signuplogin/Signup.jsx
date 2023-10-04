@@ -34,7 +34,6 @@ function Signup() {
     // Log the message to the console
     console.log(text);
   }
-  
  
   const handleSignup = async () => {
     try {

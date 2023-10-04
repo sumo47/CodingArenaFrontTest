@@ -11,7 +11,7 @@ function VerifyOtp() {
   const [otp, setOtp] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const navigate = useNavigate();
-
+ 
   const showMessage = (text, isError = false) => {
     toast.info(text, {
       autoClose: 6000,

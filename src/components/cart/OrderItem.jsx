@@ -14,6 +14,7 @@ export default function OrderItem({course}) {
                 <img
                   style={{width:'100px',height:'100px',}}
                   src={course.image}
+                  alt=''
                 
                 />
                 <div className="flex flex-col justify-between w-full pb-4">

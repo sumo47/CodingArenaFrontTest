@@ -17,7 +17,8 @@ export default function CartItem({ course, removeFromCart }) {
           <div className="flex w-full space-x-2 sm:space-x-4">
             <img
               style={{width:'110px',height:'110px'}}
-              src="./images/dev.webp"
+              src="./images/dev.webp" 
+              alt=''
              
             />
             <div className="flex flex-col justify-between w-full pb-4">

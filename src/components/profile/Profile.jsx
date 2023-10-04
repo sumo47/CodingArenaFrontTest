@@ -18,7 +18,7 @@ function Profile() {
 		navigate("/");
 	};
 
-	
+
 
 	return (
 		<div className='profilecontainer'>
@@ -28,25 +28,25 @@ function Profile() {
 				<div className='position-sticky'>
 					<ul className='nav flex-column profilesidebar'>
 						<li className='nav-item'>
-							<a className=' sidebaropt'>Edit Profile</a>
+							<a className=' sidebaropt' href="#/">Edit Profile</a>
 						</li>
 						<li className='nav-item'>
-							<a className=' sidebaropt'>My Courses</a>
+							<a className=' sidebaropt' href="#/">My Courses</a>
 						</li>
 						<li className='nav-item'>
-							<a className=' sidebaropt'>Wishlist</a>
+							<a className=' sidebaropt' href="#/">Wishlist</a>
 						</li>
 						<li className='nav-item'>
-							<a className=' sidebaropt'>My Cart</a>
+							<a className=' sidebaropt' href="#/">My Cart</a>
 						</li>
 						<li className='nav-item'>
-							<a className=' sidebaropt'>Notifications</a>
+							<a className=' sidebaropt' href="#/">Notifications</a>
 						</li>
 						<li className='nav-item'>
-							<a className=' sidebaropt'>Tests</a>
+							<a className=' sidebaropt' href="#/">Tests</a>
 						</li>
 						<li className='nav-item'>
-							<a className=' sidebaropt' onClick={handleLogout}>
+							<a className=' sidebaropt' href="#/" onClick={handleLogout}>
 								Logout
 							</a>
 						</li>
@@ -86,7 +86,7 @@ function Profile() {
 						</div>
 					</div>
 				</div>
-               
+
 
 
 
@@ -102,7 +102,7 @@ function Profile() {
 					My Progress
 				</h2>
 				<div className='id-course mt-2 position-relative'>
-					
+
 				</div>
 			</div>
 		</div>

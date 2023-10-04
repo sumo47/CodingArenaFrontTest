@@ -34,7 +34,7 @@ function Main() {
           </div>
         </div>
         <div className="hero-image">
-          <img src="./images/hero.jpg" alt="Hero Image" />
+          <img src="./images/hero.jpg" alt="" />
         </div>
       </section>
 

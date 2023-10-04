@@ -1,7 +1,7 @@
 import "./coursecontent.css";
 
 
-import { ToastContainer} from "react-toastify"; 
+import { ToastContainer } from "react-toastify";
 import { useEffect, useState } from "react";
 import axios from "axios";
 
@@ -11,12 +11,13 @@ export default function CourseContent() {
 
   const location = useLocation();
   const courseData = location.state?.course || {};
-                                                                              
+
+  // eslint-disable-next-line
   const [course, setCourse] = useState(null);
   const [cart, setCart] = useState([]);
   const [isAddingToCart, setIsAddingToCart] = useState(false); // Step 1: Add loading state
 
-  
+
 
   useEffect(() => {
     // Fetch available courses from the server
@@ -24,31 +25,32 @@ export default function CourseContent() {
       .get("https://coding-arena-backend.glitch.me/courses")
       .then((response) => {
         setCourse(response.data);
-        
       })
       .catch((error) => {
         console.error("Error fetching courses:", error);
+
       });
   }, []);
 
   const addToCart = async (courseId) => {
     if (isAddingToCart) {
+
       return; // Prevent multiple clicks while adding to cart
     }
-  
+
     setIsAddingToCart(true);
-  
+
     try {
       // Check if the course is already in the cart
       if (cart.find((cartItem) => cartItem.id === courseId)) {
         // Course is already in the cart, don't add it again
         return;
       }
-  
+
       // Send an API request to add the selected course to the cart
       const response = await axios.post('https://coding-arena-backend.glitch.me/cart/add', { courseId });
       console.log(response.data.message);
-      
+
       // Update the cart state locally
       setCart([...cart, courseData]);
     } catch (error) {
@@ -58,7 +60,7 @@ export default function CourseContent() {
     }
   };
 
-  
+
 
 
   return (
@@ -250,15 +252,15 @@ export default function CourseContent() {
           <div>Subscribe to Coding Arena's Top Courses</div>
           <div className="cartbutton">
             <button className="b1"
-             onClick={() => addToCart(courseData.id)}
-             disabled={isAddingToCart}>
-               {isAddingToCart ? 'Adding...' : 'Add to Cart'}</button>
+              onClick={() => addToCart(courseData.id)}
+              disabled={isAddingToCart}>
+              {isAddingToCart ? 'Adding...' : 'Add to Cart'}</button>
             <button className="b2">
               <i class="fa-regular fa-heart"></i>
             </button>
           </div>
         </div>
-        
+
       </div>
 
       <ToastContainer />

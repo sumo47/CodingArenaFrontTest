@@ -57,17 +57,17 @@ function Admin() {
             <ul className="nav flex-column">
               {/* Sidebar items */}
               <li className="nav-item">
-                <a className="sidebaropt" href="#">
+                <a className="sidebaropt" href="/#">
                   Dashboard
                 </a>
               </li>
               <li className="nav-item">
-                <a className="sidebaropt active" href="#">
+                <a className="sidebaropt active" href="/#">
                   Create Course
                 </a>
               </li>
               <li className="nav-item">
-                <a className="sidebaropt" href="#">
+                <a className="sidebaropt" href="/#">
                   Manage Courses
                 </a>
               </li>
