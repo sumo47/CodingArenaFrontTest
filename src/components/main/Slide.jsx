@@ -2,7 +2,7 @@ import "./main.css";
 import { Link } from "react-router-dom";
 import { BiSolidUser } from "react-icons/bi";
 import { AiFillStar } from "react-icons/ai";
-// import { ToastContainer, toast } from "react-toastify"; 
+import { ToastContainer, toast } from "react-toastify";
 
 import "react-toastify/dist/ReactToastify.css";
 
@@ -27,13 +27,13 @@ return(
               </div>
 
               <div className="teacher text-center font-bold text-xl my-2 flex  flex-col items-center justify-center ">
-                {/* <img src="https://static.vecteezy.com/system/resources/thumbnails/001/840/618/small/picture-profile-icon-male-icon-human-or-people-sign-and-symbol-free-vector.jpg" alt=""  className="w-4/12 rounded-full"/> */}
+               
 
                 <p> Instructor </p>
               </div>
 
               <div className="heading  text-center font-bold text-md ">
-                Introduction to Python Programming
+                Introduction to React Programming
               </div>
 
               <div className="price flex my-4 justify-between">

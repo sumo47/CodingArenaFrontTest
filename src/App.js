@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import Header from './components/header/Header';
 import Main from './components/main/Main';
@@ -6,14 +6,16 @@ import Signup from './components/signuplogin/Signup';
 import Login from './components/signuplogin/Login'
 import CourseList from './components/courselist/CourseList';
 import Profile from './components/profile/Profile';
-import { BrowserRouter, Route, Routes} from 'react-router-dom';
+import { BrowserRouter, Route, Routes,Link} from 'react-router-dom';
 import CourseContent from './components/coursecontent/CourseContent';
 import Cart from './components/cart/Cart';
 import VerifyOtp from './components/signuplogin/VerifyOtp';
 
-// import { ToastContainer } from 'react-toastify';
+import { ToastContainer } from 'react-toastify';
 import Checkout from './components/cart/Checkout';
-import Admin from './components/profile/Admin';
+import Admin from './components/instructor/Admin';
+
+
 
 function App() {
   

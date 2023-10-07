@@ -1,11 +1,12 @@
 import React from "react";
 
-// import ProgressBar from "@ramonak/react-progress-bar";
-// import { Link } from "react-router-dom";
+import ProgressBar from "@ramonak/react-progress-bar";
+import { Link } from "react-router-dom";
 import "./profile.css";
-// import axios from "axios";
+import axios from "axios";
 import { useNavigate } from "react-router-dom";
-// import { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
+import { ToastContainer,toast } from "react-toastify";
 
 function Profile() {
 	const navigate = useNavigate();
@@ -14,39 +15,42 @@ function Profile() {
 		// Remove the JWT token from localStorage
 		localStorage.removeItem("jwtToken");
 		console.log("Logged Out");
-		// Redirect the user to the login page or any other page as needed
-		navigate("/");
+		toast.success("Logged Out")
+		
+		setTimeout(() => {
+			navigate('/');
+		  }, 2000); 
 	};
 
-
+	
 
 	return (
 		<div className='profilecontainer'>
+			<ToastContainer/>
 			<nav
 				id='sidebar'
-				className='col-md-3 col-lg-2 d-md-block bg-light sidebar'>
+				className='col-md-3 col-lg-2 d-md-block  sidebar'
+				>
 				<div className='position-sticky'>
 					<ul className='nav flex-column profilesidebar'>
-						<li className='nav-item'>
-							<a className=' sidebaropt' href="#/">Edit Profile</a>
+						<li className='navsidebaropt'>
+							<a className=' sidebaropt'>Edit Profile</a>
 						</li>
-						<li className='nav-item'>
-							<a className=' sidebaropt' href="#/">My Courses</a>
+						<li className='navsidebaropt'>
+							<a className=' sidebaropt'>My Courses</a>
 						</li>
-						<li className='nav-item'>
-							<a className=' sidebaropt' href="#/">Wishlist</a>
+						<li className='navsidebaropt'>
+							<a className=' sidebaropt'>Wishlist</a>
 						</li>
-						<li className='nav-item'>
-							<a className=' sidebaropt' href="#/">My Cart</a>
+						<li className='navsidebaropt'>
+							<a className=' sidebaropt'>My Cart</a>
 						</li>
-						<li className='nav-item'>
-							<a className=' sidebaropt' href="#/">Notifications</a>
+						
+						<li className='navsidebaropt'>
+							<a className=' sidebaropt'>Tests</a>
 						</li>
-						<li className='nav-item'>
-							<a className=' sidebaropt' href="#/">Tests</a>
-						</li>
-						<li className='nav-item'>
-							<a className=' sidebaropt' href="#/" onClick={handleLogout}>
+						<li className='navsidebaropt'>
+							<a className=' sidebaropt' onClick={handleLogout}>
 								Logout
 							</a>
 						</li>
@@ -86,7 +90,7 @@ function Profile() {
 						</div>
 					</div>
 				</div>
-
+               
 
 
 
@@ -102,7 +106,7 @@ function Profile() {
 					My Progress
 				</h2>
 				<div className='id-course mt-2 position-relative'>
-
+					
 				</div>
 			</div>
 		</div>

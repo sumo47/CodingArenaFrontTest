@@ -1,24 +1,18 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import CartItem from "./CartItem";
-import {  useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 
 function Cart() {
 	const [cart, setCart] = useState([]);
-	const [total, setTotal] = useState(0); 
-	// const [formData, setformData] = useState({
-	// 	email: "",
-	// 	password: "",
-	//   });
-	//   const [loggedIn, setLoggedIn] = useState(false);
-	
+	const [total, setTotal] = useState(0);
 	
 
 	useEffect(() => {
 		// Fetch the list of courses in the cart from your API
 		axios
-			.get("https://coding-arena-backend.glitch.me/cart")
+			.get("http://localhost:3001/cart")
 			.then((response) => {
 				setCart(response.data);
 
@@ -37,15 +31,15 @@ function Cart() {
 	}, []);
 
 	
-	const removeFromCart = async (courseId) => {
+	const removeFromCart = async (courseTitle) => {
 		try {
 			// Make an API request to remove the course from the backend
-			await axios.delete(`https://coding-arena-backend.glitch.me/cart/remove/${courseId}`);
+			await axios.delete(`http://localhost:3001/cart/remove/${courseTitle}`);
 
 			// After successful removal from the backend, update the cart on the frontend
 			setCart((prevCart) => {
 				// Filter out the removed item
-				const updatedCart = prevCart.filter((course) => course.id !== courseId);
+				const updatedCart = prevCart.filter((course) => course.title !== courseTitle);
 
 				// Recalculate the total based on the updatedCart
 				const cartTotal = updatedCart.reduce(
@@ -72,13 +66,11 @@ function Cart() {
 	const navigatecheckout = () => {
 		// Check if the user is authenticated (token is available)
 		const token = localStorage.getItem('jwtToken');
-	
+		
 		if (token) {
-		  // User is logged in; navigate to the checkout page
+		 
 		  navigate("/checkout");
 		} else {
-		  // User is not logged in; display a message or open the login popup
-		  // Here, you can set a state variable to show a login popup or display a message to the user
 		  alert("Please log in to continue to checkout.");
 		}
 	  };
@@ -113,6 +105,7 @@ function Cart() {
 									<CartItem
 										key={course.id}
 										price={course.price}
+										title={course.title}
 										course={course}
 										removeFromCart={removeFromCart}
 										

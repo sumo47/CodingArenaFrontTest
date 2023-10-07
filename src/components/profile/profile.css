@@ -1,11 +1,19 @@
 
 #sidebar{
-    margin-top: 15px;
-    margin-left: 10px;
+    /* width: 250px;
+    height: 500px; */
+    background-image: linear-gradient(to right,#f5ac82,#a11afe);
+    margin-top: 20px;
+    margin-left: 15px;
+    border: none;
+    border-radius: 15px;
 }
 #sidebar2{
-    margin-top: 15px;
-    margin-left: 10px;
+    margin-top: 20px;
+    margin-left: 15px;
+    background-image: linear-gradient(to right,#f5ac82,#a11afe);
+    border: none;
+    border-radius: 15px;
 
 }
 .profilecontainer{
@@ -15,17 +23,26 @@
     cursor: pointer;
    
 }
-.nav-item{
-    padding: 20px;
+.navsidebaropt{
+    padding: 10px;
+   
     
-}.nav-item .sidebaropt{
+}.navsidebaropt .sidebaropt{
     font-size: 18px;
     font-weight: 600;
-    color: #a11afe;
+    color: white;
+    padding:  30px;
+
+
+    /* margin-left: 35px; */
+    
+
 
 }
-.nav-item .sidebaropt:hover{
-    color: #f5ac82;
+.navsidebaropt:hover{
+    
+    background-color: #f5ac82;
+
 
 }
 .stats{
@@ -47,4 +64,28 @@
     font-weight: 600;
     align-items: center;
     margin-left: 40px;
+}
+.createcoursehead{
+    color: #f5ac82;
+    font-weight: 700;
+    margin-top: 30px;
+    margin-bottom: 12px;
+    font-size: 32px;
+}
+.createcourselabel{
+    font-size: 18px;
+    margin-bottom: 6px;
+    font-weight: 600;
+    color:#a11afe
+}
+.coursebtn{
+    background-color: #f5ac82;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 10px;
+    margin-bottom: 15px;
 }

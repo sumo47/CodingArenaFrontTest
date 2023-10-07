@@ -5,13 +5,13 @@ import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-const API_URL = "https://coding-arena-backend.glitch.me/verifyotp";
+const API_URL = "http://localhost:3001/verifyotp";
 
 function VerifyOtp() {
   const [otp, setOtp] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const navigate = useNavigate();
- 
+
   const showMessage = (text, isError = false) => {
     toast.info(text, {
       autoClose: 6000,

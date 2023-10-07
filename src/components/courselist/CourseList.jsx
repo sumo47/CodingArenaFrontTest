@@ -3,18 +3,18 @@ import { useNavigate} from "react-router-dom";
 import axios from "axios";
 
 import "react-toastify/dist/ReactToastify.css";
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import CourseListCard from "./CourseListCard";
 import CourseContent from "../coursecontent/CourseContent"
 
 const CourseList = () => {
   
- const navigate = useNavigate(); 
+ const navigate = useNavigate();
   const [courses, setCourses] = useState([]);
 
   useEffect(() => {
     // Fetch available courses from the server
-    axios.get('https://coding-arena-backend.glitch.me/courses')
+    axios.get('http://localhost:3001/allcourses')
       .then((response) => {
         setCourses(response.data);
       })
@@ -27,12 +27,11 @@ const CourseList = () => {
   const [selectedCourse, setSelectedCourse] = useState(null);
 
 
-  const handleCardClick = (id,title, image,price) => {
-    setSelectedCourse({ id,title, image,price});
-    navigate('/coursecontent', { state: { course: {id, title, image,price } } });
+  const handleCardClick = (id,cname,title,price,description) => {
+    setSelectedCourse({ id,cname,title,price,description});
+    navigate('/coursecontent', { state: { course: {id,cname,title,price,description } } });
   }
-  
-  
+
    return (
     <>
     
@@ -46,38 +45,46 @@ const CourseList = () => {
 
       <div className="cards flex justify-center my-4 flex-wrap  md:flex-row flex-col items-center ">
 
-{/* to render course cards */}
+
 
       {courses.map((course) => (
           <CourseListCard
-          key={course.id}
+          key={course._id}
           id={course.id}
-          image={course.image}
-            title={course.title}
+         
+          cname={course.cname}
+          title={course.title}
+          rating={course.rating}
             price={course.price}
-            onClick={() => handleCardClick(course.id,course.title, course.image,course.price)}
+            description={course.description}
+            onClick={() => handleCardClick(course.id,course.cname,course.title,course.price,course.description)}
             
           />
         ))}
 
          {selectedCourse && (  
         <CourseContent
-        key={selectedCourse.id}
+        key={selectedCourse._id}
         id={selectedCourse.id}
+        cname={selectedCourse.cname}
           title={selectedCourse.title}
-          image={selectedCourse.image}
+          
           price={selectedCourse.price}
+          description={selectedCourse.description}
          
         />
         
       )}
          
+        
       
 
       </div>
+     
     </div>
     </>
   );
 };
 
 export default CourseList;
+

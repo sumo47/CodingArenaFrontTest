@@ -1,10 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
+
 
 import "./header.css";
 
 import { Link } from "react-router-dom";
 
+
+
+
 function Header() {
+
+ 
+
+
+
   
   
   return (
@@ -23,7 +32,7 @@ function Header() {
            <Link to="/courselist">COURSES</Link>
           </li>
           <li className="menu-item">
-           <Link to="/admin">INSTRUCTOR</Link>
+           <Link to="admin" >INSTRUCTOR</Link>
           </li>
           <li className="menu-item">
             <Link to="/cart">CART

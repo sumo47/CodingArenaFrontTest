@@ -3,7 +3,7 @@ import axios from "axios";
 import {ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { Link } from "react-router-dom";
-// import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export default function Login() {
   const [formData, setFormData] = useState({
@@ -11,7 +11,7 @@ export default function Login() {
     password: "",
   });
   //to navigate to profle after login
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
 
     //popup
     const showMessage = (text, isError = false) => {
@@ -26,17 +26,20 @@ export default function Login() {
 
   const handleLogin = async () => {
     try {
-      const response = await axios.post("https://coding-arena-backend.glitch.me/login", formData);
-      const { success, token, error } = response.data;
+      const response = await axios.post("http://localhost:3001/login", formData);
+      const { success, token,admin, error } = response.data;
 
       if (success) {
-         // Store the JWT token in localStorage
+        
          localStorage.setItem("jwtToken", token);
-        // Display a success toast
-        showMessage("Login successful!");
-        // setTimeout(() => {
-        //   navigate('/profile');
-        // }, 3000); 
+      
+         if (admin) {
+          // If the user is an admin, display a message and allow course upload
+          showMessage("Logged in as admin. You can now upload courses.");
+        } else {
+          // If the user is not an admin, display a regular login success message
+          showMessage("Login successful!");
+        }
 
         // Reset the input fields to empty strings
         setFormData({

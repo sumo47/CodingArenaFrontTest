@@ -1,12 +1,14 @@
 import "./main.css";
 import { Link } from "react-router-dom";
-// import { BiSolidUser } from "react-icons/bi";
-// import { AiFillStar } from "react-icons/ai";
-// import { ToastContainer, toast } from "react-toastify";
+import { BiSolidUser } from "react-icons/bi";
+import { AiFillStar } from "react-icons/ai";
+import { ToastContainer, toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 
 import "react-toastify/dist/ReactToastify.css";
 import CourseSlider from "./CourseSlider";
+
+
 
 function Main() {
 
@@ -34,7 +36,7 @@ function Main() {
           </div>
         </div>
         <div className="hero-image">
-          <img src="./images/hero.jpg" alt="" />
+          <img src="./images/hero.jpg" alt="Hero Image" />
         </div>
       </section>
 

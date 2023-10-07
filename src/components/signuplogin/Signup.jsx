@@ -1,10 +1,12 @@
-import React, { useState} from "react";
+import React, { useState,useEffect } from "react";
 import axios from "axios"; // Import Axios for making HTTP requests
 import "./signup.css";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { Link } from "react-router-dom";
 import { useNavigate } from 'react-router-dom';
+
+  
 
 function Signup() {
   const [formData, setFormData] = useState({
@@ -34,11 +36,12 @@ function Signup() {
     // Log the message to the console
     console.log(text);
   }
+  
  
   const handleSignup = async () => {
     try {
-      const response = await axios.post("https://coding-arena-backend.glitch.me/signup", formData); // Updated endpoint
-      const { success, error } = response.data;
+      const response = await axios.post("http://localhost:3001/signup", formData); // Updated endpoint
+      const { success, token, error } = response.data;
   
       if (success) {
         
