@@ -14,7 +14,7 @@ const CourseList = () => {
 
   useEffect(() => {
     // Fetch available courses from the server
-    axios.get('http://localhost:3001/allcourses')
+    axios.get('https://coding-arena-backend.glitch.me/allcourses')
       .then((response) => {
         setCourses(response.data);
       })

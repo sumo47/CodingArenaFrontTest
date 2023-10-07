@@ -12,7 +12,7 @@ function Cart() {
 	useEffect(() => {
 		// Fetch the list of courses in the cart from your API
 		axios
-			.get("http://localhost:3001/cart")
+			.get("https://coding-arena-backend.glitch.me/cart")
 			.then((response) => {
 				setCart(response.data);
 
@@ -34,7 +34,7 @@ function Cart() {
 	const removeFromCart = async (courseTitle) => {
 		try {
 			// Make an API request to remove the course from the backend
-			await axios.delete(`http://localhost:3001/cart/remove/${courseTitle}`);
+			await axios.delete(`https://coding-arena-backend.glitch.me/cart/remove/${courseTitle}`);
 
 			// After successful removal from the backend, update the cart on the frontend
 			setCart((prevCart) => {

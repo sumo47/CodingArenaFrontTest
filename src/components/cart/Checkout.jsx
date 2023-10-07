@@ -19,7 +19,7 @@ const Checkout = () => {
   useEffect(() => {
     // Fetch the list of courses in the cart from your API
     axios
-      .get("http://localhost:3001/cart")
+      .get("https://coding-arena-backend.glitch.me/cart")
       .then((response) => {
         setCart(response.data);
 
@@ -55,7 +55,7 @@ const Checkout = () => {
 	 
     // Send a POST request to the backend to place the order
     axios
-      .post("http://localhost:3001/checkout", orderData,{ headers })
+      .post("https://coding-arena-backend.glitch.me/checkout", orderData,{ headers })
       .then((response) => {
         console.log("Order placed successfully");
 		  // Clear the cart and reset the form

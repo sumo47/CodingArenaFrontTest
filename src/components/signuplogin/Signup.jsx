@@ -40,7 +40,7 @@ function Signup() {
  
   const handleSignup = async () => {
     try {
-      const response = await axios.post("http://localhost:3001/signup", formData); // Updated endpoint
+      const response = await axios.post("https://coding-arena-backend.glitch.me/signup", formData); // Updated endpoint
       const { success, token, error } = response.data;
   
       if (success) {

@@ -26,7 +26,7 @@ export default function Login() {
 
   const handleLogin = async () => {
     try {
-      const response = await axios.post("http://localhost:3001/login", formData);
+      const response = await axios.post("https://coding-arena-backend.glitch.me/login", formData);
       const { success, token,admin, error } = response.data;
 
       if (success) {

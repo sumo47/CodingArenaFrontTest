@@ -18,7 +18,7 @@ export default function CourseContent() {
   useEffect(() => {
     // Fetch available courses from the server
     axios
-      .get("http://localhost:3001/allcourses")
+      .get("https://coding-arena-backend.glitch.me/allcourses")
       .then((response) => {
         setCourses(response.data);
         
@@ -32,7 +32,7 @@ export default function CourseContent() {
   const addToCart = async () => {
     try {
       // Send an API request to add the selected course to the cart
-      const response = await axios.post('http://localhost:3001/cart/add', {
+      const response = await axios.post('https://coding-arena-backend.glitch.me/cart/add', {
         courseTitle: courseData.title, // Pass the course title
       });
   

@@ -83,7 +83,7 @@ function CreateCourse() {
         };
     
         try {
-          axios.post("http://localhost:3001/upload", formData, { headers }).then((response) => {
+          axios.post("https://coding-arena-backend.glitch.me/upload", formData, { headers }).then((response) => {
             console.log("course created");
             showMessage("Course Created")
           });
